@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <title>Image Gram</title>
+</head>
+
+<body>
+    <div class="header text-center mb-4">
+        <i class="fa fa-photo-video fa-3x text-primary"></i>
+        <span class="display-4">Image<span class="text-primary">Gram</span></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                {{{ body }}}
+            </div>
+            <div class="col-md-4">
+                {{>stats this}}
+                {{>popular this}}
+                {{>comments this}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

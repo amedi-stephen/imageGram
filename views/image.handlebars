@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="header text-center">
+        <h3 class="display-4"></h3>
+    </div>
+    <div class="card">
+        <div class="card-header bg-light">
+            <h3 class="card-title">
+                {{image.title}}
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="col-md-12 text-center">
+                <img src="/uploads/{{image.filename}}" class="img-thumbnail" alt="{{image.title}}">
+            </div>
+        </div>
+        <div class="footer bg-light">
+            <button class="btn btn-primary">Like <i class="fa fa-grin-hearts"></i></button>
+            <strong>{{image.likes}}</strong> &nbsp; - &nbsp;
+            <i class="fa fa-eye"></i> {{image.views}} &nbsp; - &nbsp;
+            Posted: <span class="text-muted">{{image.timestamp}}</span>
+        </div>
+    </div>
+    <div class="card mt-4">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <h3 class="card-title">
+                        Comments
+                    </h3>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button class="btn btn-dark">Comment</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form action="/postComment" method="post">
+                <div class="form-group">
+                    <label for="name"><strong>Name:</strong></label>
+                    <input type="text" name="name" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <label for="name"><strong>Email:</strong></label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                 <div class="form-group">
+                    <label for="comment"><strong>Comment:</strong></label>
+                    <textarea name="comment" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-primary mb-4">Post Comment <i class="fa fa-comment"></i></button>
+            </form>
+            <ul class="media-list">
+                {{#each comments}}
+               <li class="media mb-4">
+                   <a href="#" class="pull-left">
+                       <img src="/uploads/caspar-camille-rubin-89xuP-XmyrA-unsplash.jpg" width="45" height = "45" class="mr-2">
+                   </a>
+                   <div class="media-body">
+                       {{comment}}<br />
+                       <strong class="media-heading">
+                           {{name}}
+                       </strong>
+                       <small class="text-muted">{{timestamp}}</small>
+                   </div>
+               </li>
+               {{/each}}
+           </ul>
+        </div>
+        
+    </div>
+</div>
